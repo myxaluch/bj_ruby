@@ -1,5 +1,10 @@
 ##
 # This class contained information and methods for working with Deck
+# Deck was implemented like a shuffle-machine, in other words, infinity deck.
+# It was made for easy, but can be update to strong rules and realistic:
+#                           * number of decks - from 1 to 8
+#                           * check for shuffle decks
+#                           * etc.
 require_relative 'Card'
 
 class Deck

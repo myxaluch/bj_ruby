@@ -1,5 +1,5 @@
 ##
-# This class content information about Dealer ( inherits from class Player)
+# This class content information about Dealer (inherits from class Player)
 require_relative 'Player'
 
 class Dealer < Player

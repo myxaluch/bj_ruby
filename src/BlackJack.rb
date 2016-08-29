@@ -1,6 +1,14 @@
 ##
 # This class containts main logic information for BlackJack
-# Main method : +round+. Some info
+# Main method : +round+. Some info about game logic:
+#             * Each round separate on logic part:
+#                 - +first_draw+ - get first two card and check about double-down
+#                                  and BlackJack
+#                 - +player_turn+ - usual turn of player with hit and stay options
+#                                   and check for bust
+#                 - +dealer_turn+ - turn of dealer. Stay on 17 points, check for bust
+#                 - +end_of_round+ - scoring and show result.
+#
 require_relative 'Dealer'
 
 class BlackJack
@@ -13,10 +21,10 @@ class BlackJack
 
   def round bet
     @bet = bet
-    if first_round
-      if make_decision
+    if first_draw
+      if player_turn
         if dealer_turn
-          if end_of_game
+          if end_of_round
             reset_round
           end
         else
@@ -36,59 +44,7 @@ class BlackJack
 
   private
 
-  def make_decision
-    loop do
-      puts "You turn: (h)it, (s)top"
-      turn = gets.chomp
-      case turn
-        when 'h'
-          @player.take_a_card(@deck)
-          @player.show_hand
-          if @player.bust?
-            return false
-          end
-        when 's'
-          puts "Wait for result, your score : #{@player.points_in_hand}"
-          return true
-        else
-          puts "Please, enter the correct turn!"
-      end
-    end
-  end
-
-  def dealer_turn
-    @dealer.open_hand
-    loop do
-        break if @dealer.points_in_hand >= 17
-        @dealer.take_a_card(@deck)
-        @dealer.show_hand
-        sleep 2
-        if @dealer.bust?
-          return false
-        end
-    end
-    return true
-  end
-
-  def end_of_game
-    if @player.points_in_hand > @dealer.points_in_hand
-      puts "You win!"
-      @player.money += @bet
-    elsif @player.points_in_hand < @dealer.points_in_hand
-      puts "You lose!"
-      @player.money -= @bet
-    else
-      puts "Stay"
-    end
-    return true
-  end
-
-  def reset_round
-    @player.clear_hand
-    @dealer.clear_hand
-  end
-
-  def first_round
+  def first_draw
     @player.take_a_card(@deck)
     @player.take_a_card(@deck)
     @player.show_hand
@@ -128,4 +84,57 @@ class BlackJack
     end
     return true
   end
+
+  def player_turn
+    loop do
+      puts "You turn: (h)it, (s)top"
+      turn = gets.chomp
+      case turn
+        when 'h'
+          @player.take_a_card(@deck)
+          @player.show_hand
+          if @player.bust?
+            return false
+          end
+        when 's'
+          puts "Wait for result, your score : #{@player.points_in_hand}"
+          return true
+        else
+          puts "Please, enter the correct turn!"
+      end
+    end
+  end
+
+  def dealer_turn
+    @dealer.open_hand
+    loop do
+        break if @dealer.points_in_hand >= 17
+        @dealer.take_a_card(@deck)
+        @dealer.show_hand
+        sleep 2
+        if @dealer.bust?
+          return false
+        end
+    end
+    return true
+  end
+
+  def end_of_round
+    if @player.points_in_hand > @dealer.points_in_hand
+      puts "You win!"
+      @player.money += @bet
+    elsif @player.points_in_hand < @dealer.points_in_hand
+      puts "You lose!"
+      @player.money -= @bet
+    else
+      puts "Stay"
+    end
+    return true
+  end
+
+  def reset_round
+    @player.clear_hand
+    @dealer.clear_hand
+  end
+
 end
