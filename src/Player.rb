@@ -26,12 +26,10 @@ class Player
   end
 
   def check_blackjack
-    if @hand.size == 2
-      if points_in_hand == 21
+    if @hand.size == 2 && points_in_hand == 21
         return true
       else
         return false
-      end
     end
   end
 

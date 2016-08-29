@@ -62,10 +62,10 @@ class BlackJack
         break if @dealer.points_in_hand >= 17
         @dealer.take_a_card(@deck)
         @dealer.show_hand
+        sleep 2
         if @dealer.bust?
           return false
         end
-        sleep 2
     end
     return true
   end

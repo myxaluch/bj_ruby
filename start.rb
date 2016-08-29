@@ -1,7 +1,7 @@
-require_relative 'BlackJack'
+require_relative 'src/BlackJack'
 
-puts "Welcome to CatBlackJack" +
-     "!House rules:\n" +
+puts "Welcome to Cat BlackJack casino" +
+     "House rules:\n" +
      "------------\n" +
      "  * Blackjack wins 3:2\n" +
      "  * Dealer stands at 17\n" +
