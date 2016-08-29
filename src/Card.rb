@@ -11,7 +11,7 @@ class Card
 
   attr_accessor :suit, :value, :open, :points, :used
 
-  def initialize(value = 'Q', suit = '♠', points = 10)
+  def initialize(value = 'queen', suit = 'spades', points = 10)
     @value = value
     @suit = suit
     @open = true
@@ -21,9 +21,9 @@ class Card
 
   def show
     if @open
-      print "(#{@value},#{@suit}) "
+      return [@value, @suit]
     else
-      print "(*,*) "
+      return ['flipped']
     end
   end
 

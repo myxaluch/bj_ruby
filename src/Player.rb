@@ -5,9 +5,8 @@ require_relative 'Deck'
 class Player
   attr_accessor :money
 
-  def initialize(name = "Jack", money = 1000)
-    @money = money
-    @name = name
+  def initialize()
+    @money = 1000
     @hand = []
   end
 
@@ -33,7 +32,7 @@ class Player
     end
   end
 
-  def show_status
+  def show_bank
     puts "You bank: #{@money}$"
   end
 
@@ -46,9 +45,7 @@ class Player
   end
 
   def show_hand
-    print self.class.to_s + "'s hand - "
     @hand.map {|card| card.show}
-    puts ''
   end
 
 end

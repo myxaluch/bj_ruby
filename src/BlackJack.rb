@@ -13,8 +13,8 @@ require_relative 'Dealer'
 
 class BlackJack
 
-  def initialize(player)
-    @dealer = Dealer.new
+  def initialize(dealer, player)
+    @dealer = dealer
     @player = player
     @deck = Deck.new
   end
@@ -41,8 +41,6 @@ class BlackJack
       reset_round
     end
   end
-
-  private
 
   def first_draw
     @player.take_a_card(@deck)

@@ -1,0 +1,12 @@
+<div class='page'>
+  <div class='player-cards' style="width: 500px;">
+    <div class='new-cards'>
+      <% settings.player.show_hand.each do |card| %>
+          <div class='card <%="#{card[0]}-of-#{card[1]}" %>' ></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<a href='/hit'>Hit</a>
+<a href='/stay'>Hit</a>
+<%= settings.player.show_hand %>
