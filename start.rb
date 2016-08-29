@@ -18,6 +18,11 @@ get '/hit' do
   redirect to('/')
 end
 
+get '/clear' do
+  settings.player.clear_hand
+  redirect to('/')
+end
+
 #puts "Welcome to CatBlackJack casino\n" +
 #     "House rules:\n" +
 #     "------------\n" +
