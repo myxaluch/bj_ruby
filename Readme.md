@@ -1,4 +1,4 @@
-# CatBlackjack - BlackJack in Ruby (with Sinatra)
+# CatBlackJack - BlackJack in Ruby (with Sinatra)
 -----
 
 This is an implementation of Blackjack in Ruby with the following house rules:
