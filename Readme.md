@@ -35,3 +35,5 @@ This is an implementation of Blackjack in Ruby with the following house rules:
 Implement a simple game of Blackjack. It used a web-interface (via Sinatra). Player start game with $1000, and allow to make bet with 50$-step for each deal.
 
 The program implement the core Blackjack rules, i.e. players can choose to hit until they go over 21, the dealer must hit on 16 and stay on 17 and also support doubling-down.
+
+The UI(css) partly taken from this repo: https://github.com/tonyspiro/blackjack (thanks for tonyspiro)
