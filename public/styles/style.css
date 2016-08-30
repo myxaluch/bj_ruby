@@ -48,7 +48,7 @@ body{
 .legend{
 	font: italic 90% serif;
 	color: white;
-	background-color: green;
+	background-color: #509933;
 	padding: 15px;
 }
 
@@ -102,7 +102,7 @@ body{
 	white-space: nowrap;
 	text-decoration: none;
 	cursor: pointer;
-	background-color: green;
+	background-color: #509933;
 	border-style: none;
 	text-align: center;
 	overflow: visible;

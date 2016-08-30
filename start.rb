@@ -11,12 +11,11 @@
 #   +/+ - main method for rendering result
 #
 require 'sinatra'
-require_relative 'src/BlackJack'
+require_relative 'src/Dealer'
 
 configure do
   set :player, Player.new
   set :dealer, Dealer.new
-  set :card, Card.new
   set :deck, Deck.new
   set :bet, 0
   set :message, ""
@@ -30,7 +29,7 @@ end
 get '/hit' do
   settings.player.take_a_card(settings.deck)
   if settings.player.bust?
-    settings.message = "You bust!"
+    settings.message = "You bust! "
     settings.player.money -=  settings.bet
     settings.bet = 0
   end
@@ -51,7 +50,7 @@ get '/stay' do
         settings.player.money -= settings.bet
         settings.bet = 0
       else
-        settings.message "Stay"
+        settings.message "Stand"
       end
       break
     end

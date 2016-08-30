@@ -2,11 +2,6 @@
 <div class='clear'></div>
 <%= erb :player %>
 <div class='clear'></div>
-<% if settings.player.show_hand.empty? || !settings.message.empty? %>
-  <%= erb :message %>
-  <%= erb :money %>
-  <%= erb :buttons %>
-<% else %>
-  <%= erb :buttons %>
-  <%= erb :money %>
-<% end %>
+<div class='message'><%= settings.message %></div> 
+<%= erb :buttons %>
+<%= erb :money %>

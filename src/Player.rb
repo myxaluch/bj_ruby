@@ -32,10 +32,6 @@ class Player
     end
   end
 
-  def show_bank
-    puts "You bank: #{@money}$"
-  end
-
   def bankrupt?
     @money <= 0
   end
