@@ -15,11 +15,11 @@ This is an implementation of Blackjack in Ruby with the following house rules:
 * Run bundle
 <pre>
     $> cd bj-ruby
-    blackjack-ruby> bundle install
+    bj-ruby> bundle install
 </pre>
 * To run the game
 <pre>
-    blackjack-ruby> ruby start.rb
+    bj-ruby> ruby start.rb
 </pre>
 * and open your browser on http://localhost:4567/
 * Choose the bet by "+" / "-" and press "Deal"
@@ -27,7 +27,7 @@ This is an implementation of Blackjack in Ruby with the following house rules:
 ### Running test
 * To run the test
 <pre>
-    blackjack-ruby> ruby start_test.rb
+    bj-ruby> ruby start_test.rb
 </pre>
 
 
