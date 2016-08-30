@@ -29,7 +29,7 @@ end
 get '/hit' do
   settings.player.take_a_card(settings.deck)
   if settings.player.bust?
-    settings.message = "You bust! "
+    settings.message = "You bust!"
     settings.player.money -=  settings.bet
     settings.bet = 0
   end
@@ -105,6 +105,7 @@ get '/deal' do
   if settings.player.check_blackjack
     settings.message = 'Lucky - BlackJack!'
     if settings.dealer.check_blackjack
+      settings.message = "Dealer BlackJack too, win 1:1"
       settings.player.money += settings.bet
       settings.bet = 0
     else

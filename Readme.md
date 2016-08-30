@@ -1,4 +1,4 @@
-## Blackjack in Ruby (with Sinatra)
+### CatBlackjack - BlackJack in Ruby (with Sinatra)
 -----
 
 This is an implementation of Blackjack in Ruby with the following house rules:
@@ -9,7 +9,7 @@ This is an implementation of Blackjack in Ruby with the following house rules:
   * Double-down limited to 100% of bet
 
 
-### Running game
+## Running game
 
 * Clone this repo
 * Run bundle
@@ -24,8 +24,14 @@ This is an implementation of Blackjack in Ruby with the following house rules:
 * and open your browser on http://localhost:4567/
 * Choose the bet by "+" / "-" and press "Deal"
 
+## Running test
+* To run the test
+<pre>
+    blackjack-ruby> ruby start_test.rb
+</pre>
+
 
 ### Requirements
-Implement a simple game of blackjack. It used a web-interface (via Sinatra). The program start each player with $1000, and allow the players to make bet with 50$-step for each deal.
+Implement a simple game of Blackjack. It used a web-interface (via Sinatra). Player start game with $1000, and allow to make bet with 50$-step for each deal.
 
-The program implement the core blackjack rules, i.e. players can choose to hit until they go over 21, the dealer must hit on 16 and stay on 17 and also support doubling-down.
+The program implement the core Blackjack rules, i.e. players can choose to hit until they go over 21, the dealer must hit on 16 and stay on 17 and also support doubling-down.

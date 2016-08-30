@@ -1,11 +1,11 @@
 <div class='buttons'>
   <% if settings.player.show_hand.size == 0 || !settings.message.empty? %>
-    <a class='btn' href='/deal'>Deal</a>
+    <a class='btn' name="deal" href='/deal'>Deal</a>
   <% else %>
-    <a class='btn' href='/hit'>Hit</a>
-    <a class='btn' href='/stay'>Stay</a>
+    <a class='btn' name="hit" href='/hit'>Hit</a>
+    <a class='btn' name="stay" href='/stay'>Stay</a>
     <% if settings.player.show_hand.size == 2 %>
-      <a class='btn' href='/double'>Double</a>
+      <a class='btn' name="double" href='/double'>Double</a>
     <% end %>
   <% end %>
 </div>
