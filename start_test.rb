@@ -44,6 +44,16 @@ class BlackJackTest < Test::Unit::TestCase
     assert page.has_css?('div.card.flipped')
   end
 
+  def test_dealer_points_hidden
+    visit '/'
+    assert page.has_css?('div.dealer-total', visible: 'hidden')
+  end
+
+  def test_player_points_open
+    visit '/'
+    assert page.has_css?('div.dealer-total', visible: 'visible')
+  end
+
   def test_player_busted
     visit '/'
     if page.has_css?('div.message', text: 'You bust!') ||
@@ -53,4 +63,5 @@ class BlackJackTest < Test::Unit::TestCase
       return true
     end
   end
+
 end
