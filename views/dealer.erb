@@ -1,0 +1,19 @@
+<div class='dealer-cards' style='width :<%= settings.dealer.show_hand.size * 84 %>px'>
+  <div class='new-cards'>
+    <% settings.dealer.show_hand.each do |card| %>
+      <% if card.size == 2 %>
+        <div class='card <%="#{card[0]}-of-#{card[1]}" %>' ></div>
+      <% else %>
+         <div class='card <%= "#{card[0]}-of-#{card[1]} #{card[2]}" %>'></div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class='clear'></div>
+  <% if !settings.dealer.show_hand.empty? %>
+    <% if settings.dealer.show_hand[1].size == 3 %>
+      <div class='dealer-total' style= "visibility: hidden;"><%= settings.dealer.points_in_hand %></div>
+    <% else %>
+      <div class='dealer-total' style= "visibility: visible;"><%= settings.dealer.points_in_hand %></div>
+    <% end %>
+  <% end %>
+</div>

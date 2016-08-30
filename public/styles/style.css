@@ -39,6 +39,24 @@ body{
 	text-align: center;
 }
 
+.line{
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px;
+}
+
+.legend{
+	font: italic 90% serif;
+	color: white;
+	background-color: green;
+	padding: 15px;
+}
+
+.legend h1{
+	font: bold 100% serif;
+	color: black;
+}
+
 .dealer-cards .card, .player-cards .card {
 	margin-left: 5px;
 }
@@ -61,7 +79,7 @@ body{
 	margin-top: 10px;
 }
 
- .buttons{
+ buttons{
 	width: 210px;
 	margin: 20px auto 0 auto;
  }
@@ -72,7 +90,6 @@ body{
 
 
 .btn {
-	margin: 1px;
 	font: bold 13px "Helvetica Neue", Helvetica, Arial, clean, sans-serif !important;
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25), -2px 0 1px rgba(0,0,0,0.25);
 	border-radius: 5px;
@@ -107,7 +124,7 @@ body{
 .btn:focus {
 	background-position: 0 -50px;
 	color: white;
-	background-color: #c90059;
+	background-color: red;
 }
 
 .btn:active {
@@ -124,15 +141,9 @@ body{
 }
 
 .message{
-	font-size: 25px;
-	margin-top: 30px;
-	height: 60px;
+	font-size: 20px;
+	margin-top: 5px;
 }
-
-.dealer-total{
-	visibility: hidden;
-}
-
 
 /* Clubs */
 .ace-of-clubs{
@@ -360,15 +371,15 @@ body{
 
 .betting-area{
 	width: 70px;
-	margin: 30px auto 30px auto;
+	margin: 5px auto 5px auto;
 }
 
-.betting-area #more{
+.betting-area .btn{
 	float: left;
 	width: 30px;
 }
 
-.betting-area #less{
+.betting-area .btn{
 	float: left;
 	width: 30px;
 }

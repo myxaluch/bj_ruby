@@ -1,0 +1,17 @@
+<div class='player-cards' style='width :<%= settings.player.show_hand.size * 84 %>px'>
+  <div class='new-cards'>
+    <% settings.player.show_hand.each do |card| %>
+      <% if card.size == 2 %>
+        <div class='card <%="#{card[0]}-of-#{card[1]}" %>' ></div>
+      <% else %>
+         <div class='card <%= "#{card[0]}-of-#{card[1]} #{card[2]}" %>'></div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class='clear'></div>
+  <% if settings.player.show_hand.empty? %>
+      <div class='player-total' style= "visibility: hidden;"><%= settings.player.points_in_hand %></div>
+  <% else %>
+      <div class='player-total' style= "visibility: visible;"><%= settings.player.points_in_hand %></div>
+  <% end %>
+</div>

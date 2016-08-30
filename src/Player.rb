@@ -37,7 +37,7 @@ class Player
   end
 
   def bankrupt?
-    @money < 0
+    @money <= 0
   end
 
   def clear_hand

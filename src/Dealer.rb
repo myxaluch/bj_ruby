@@ -13,7 +13,6 @@ class Dealer < Player
   def check_blackjack
     open_hand
     if self.points_in_hand == 21 && @hand[0].value == 'A'
-      puts "Dealer have BlackJack too! Wins - 1:1"
       return true
     else
       return false
@@ -22,7 +21,6 @@ class Dealer < Player
 
   def open_hand
     @hand[1].open = true
-    self.show_hand
   end
 
 end

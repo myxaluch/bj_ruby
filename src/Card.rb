@@ -23,7 +23,7 @@ class Card
     if @open
       return [@value, @suit]
     else
-      return ['flipped']
+      return [@value, @suit, 'flipped']
     end
   end
 
