@@ -47,7 +47,9 @@ class BlackJackTest < Test::Unit::TestCase
   def test_player_busted
     visit '/'
     if page.has_css?('div.message', text: 'You bust!') ||
-       page.has_css?('div.message', text: 'Dealer bust!')
+       page.has_css?('div.message', text: 'Dealer bust!') ||
+       page.has_css?('div.message', text: 'You win!') ||
+       page.has_css?('div.message', text: 'Stand')
       return true
     end
   end

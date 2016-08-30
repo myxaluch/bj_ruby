@@ -46,7 +46,7 @@ get '/stay' do
         settings.player.money += settings.bet
         settings.bet = 0
       elsif settings.player.points_in_hand < settings.dealer.points_in_hand
-        settings.message = "You lose!"
+        settings.message = "You bust!"
         settings.player.money -= settings.bet
         settings.bet = 0
       else
