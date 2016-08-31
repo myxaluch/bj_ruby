@@ -103,13 +103,13 @@ get '/deal' do
   settings.dealer.take_a_card(settings.deck)
   settings.dealer.take_a_card(settings.deck)
   if settings.player.check_blackjack
-    settings.message = 'Lucky - BlackJack!'
+    settings.message = "Lucky - BlackJack!\n"
     if settings.dealer.check_blackjack
-      settings.message = "Dealer BlackJack too, win 1:1"
+      settings.message.concat("Dealer BlackJack too, win 1:1")
       settings.player.money += settings.bet
       settings.bet = 0
     else
-      settings.message = "You win 3:2! Congratulations"
+      settings.message.concat("You win 3:2! Congratulations")
       settings.player.money += 1.5 * settings.bet
       settings.bet = 0
     end
