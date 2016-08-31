@@ -54,7 +54,7 @@ class BlackJackTest < Test::Unit::TestCase
     assert page.has_css?('div.dealer-total', visible: 'visible')
   end
 
-  def test_player_busted
+  def test_show_message
     visit '/'
     if page.has_css?('div.message', text: 'You bust!') ||
        page.has_css?('div.message', text: 'Dealer bust!') ||
